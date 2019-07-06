@@ -1,0 +1,80 @@
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.exe
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.pdb
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.dll
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.xml
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csprojAssemblyReference.cache
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\MainWindow.baml
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\App.g.cs
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.g.resources
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.cache
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CoreCompileInputs.cache
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CopyComplete
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.exe
+C:\Users\dcl\Desktop\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.pdb
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.exe
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.pdb
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.dll
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.xml
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csprojAssemblyReference.cache
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\MainWindow.baml
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\MainWindow.g.cs
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\App.g.cs
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.g.resources
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.cache
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CoreCompileInputs.cache
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CopyComplete
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.exe
+C:\Users\CyborgCthulhu\Desktop\Skeleton\Skeleton\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.pdb
+G:\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.exe
+G:\SkeletonBasics-WPF\bin\Debug\SkeletonBasics-WPF.pdb
+G:\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.dll
+G:\SkeletonBasics-WPF\bin\Debug\Microsoft.Kinect.xml
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csprojAssemblyReference.cache
+G:\SkeletonBasics-WPF\obj\Debug\MainWindow.baml
+G:\SkeletonBasics-WPF\obj\Debug\MainWindow.g.cs
+G:\SkeletonBasics-WPF\obj\Debug\App.g.cs
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.g.resources
+G:\SkeletonBasics-WPF\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.cache
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CoreCompileInputs.cache
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.csproj.CopyComplete
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.exe
+G:\SkeletonBasics-WPF\obj\Debug\SkeletonBasics-WPF.pdb
+G:\Window Project\bin\Debug\SkeletonBasics-WPF.exe
+G:\Window Project\bin\Debug\SkeletonBasics-WPF.pdb
+G:\Window Project\bin\Debug\Microsoft.Kinect.dll
+G:\Window Project\bin\Debug\Microsoft.Kinect.xml
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.csprojAssemblyReference.cache
+G:\Window Project\obj\Debug\MainWindow.baml
+G:\Window Project\obj\Debug\MainWindow.g.cs
+G:\Window Project\obj\Debug\App.g.cs
+G:\Window Project\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.g.resources
+G:\Window Project\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.cache
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.CoreCompileInputs.cache
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.CopyComplete
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.exe
+G:\Window Project\obj\Debug\SkeletonBasics-WPF.pdb
+D:\Window Project\bin\Debug\SkeletonBasics-WPF.exe
+D:\Window Project\bin\Debug\SkeletonBasics-WPF.pdb
+D:\Window Project\bin\Debug\Microsoft.Kinect.dll
+D:\Window Project\bin\Debug\Microsoft.Kinect.xml
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.csprojAssemblyReference.cache
+D:\Window Project\obj\Debug\MainWindow.baml
+D:\Window Project\obj\Debug\MainWindow.g.cs
+D:\Window Project\obj\Debug\App.g.cs
+D:\Window Project\obj\Debug\SkeletonBasics-WPF_MarkupCompile.cache
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.g.resources
+D:\Window Project\obj\Debug\Microsoft.Samples.Kinect.SkeletonBasics.Properties.Resources.resources
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.GenerateResource.cache
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.CoreCompileInputs.cache
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.csproj.CopyComplete
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.exe
+D:\Window Project\obj\Debug\SkeletonBasics-WPF.pdb
