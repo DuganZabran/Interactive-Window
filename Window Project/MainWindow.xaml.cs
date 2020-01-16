@@ -14,6 +14,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
     using System;
     using System.Collections.Generic;
     using System.Windows.Forms;
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -105,7 +108,27 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 17),
             new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 18),
             new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 19),
-            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 20)
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 20),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 21),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 22),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 23),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 24),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 25),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 26),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 27),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 28),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 29),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 30),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 31),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 32),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 33),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 34),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 35),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 36),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 37),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 38),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 39),
+            new Balls((float)ran.Next((int) RenderWidth), (float)ran.Next((int) RenderHeight), 0, 0, 0, 0, 10, 40)
         };
 
         public static Dictionary<int, System.Windows.Point> Oldhead = new Dictionary<int, System.Windows.Point>();
@@ -123,6 +146,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             WindowStyle = WindowStyle.None;
             WindowState = WindowState.Maximized;
             ResizeMode = ResizeMode.NoResize;
+            System.Windows.Forms.Cursor.Hide();
             this.Background = System.Windows.Media.Brushes.Black;
             InitializeComponent();
 
@@ -147,6 +171,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             private float radius;
             //ball mass
             private float mass;
+            private char colorChar;
             public Balls(float x, float y, float deltaX, float deltaY, float accX, float accY, float r, int i)
             {
                 position.X = x;
@@ -158,6 +183,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 radius = r;
                 id = i;
                 mass = radius * 10.0f;
+                colorChar = 'g';
             }
             public float getMass()
             {
@@ -165,25 +191,34 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             }
             public void update()
             {
-                
                 //Switches between gravity and no gravity
                 if(DateTime.Now.Minute%2 == 0)
                 {
-                    //Friction
-                    if(timeSwitch)
-                    {
-                        //position.X = (float)ran.Next((int)RenderWidth);
-                        //position.Y = (float)ran.Next((int)RenderHeight);
-                        //dY = 0;
-                        //dX = 0;
-                    }
-                    timeSwitch = false;
                     ax = -dX * 0.01f;
                     ay = -dY * 0.01f;
                     dX += ax + (float)randX;
                     dY += ay + (float)randY;
                     position.X += dX;
                     position.Y += dY;
+
+                    if(dX < 0)
+                    {
+                        randX = -Math.Abs(randX);
+                    }
+                    else
+                    {
+                        randX = Math.Abs(randX);
+                    }
+
+                    if (dY < 0)
+                    {
+                        randY = -Math.Abs(randX);
+                    }
+                    else
+                    {
+                        randY = Math.Abs(randX);
+                    }
+
                     if (Math.Abs(((dX * dX) + (dY * dY))) < 0.08f)
                     {
                         dX = 0;
@@ -194,7 +229,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 else
                 {
                     //Friction
-                    timeSwitch = true;
                     ax = -dX * 0.01f;
                     ay = -dY * 0.01f;
                     dX += ax;
@@ -209,6 +243,25 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     checkBoundaryCollision();
                 }
                 
+            }
+            public char getColor()
+            {
+                return colorChar;
+            }
+
+            public void changeColor()
+            {
+                char[] charList = new char[6];
+                charList[0] = 'r';
+                charList[1] = 'o';
+                charList[2] = 'y';
+                charList[3] = 'g';
+                charList[4] = 'b';
+                charList[5] = 'p';
+
+                int randomNumberIndex = (int)(ran.Next(0, 6));
+
+                colorChar = charList[randomNumberIndex];
             }
             public int getid()
             {
@@ -297,7 +350,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 //Dot Product Normal
                 float dpNorm1 = dX * nx + dY * ny;
                 float dpNorm2 = other.getdX() * nx + other.getdY() * ny;
-                // Consercation of momentum
+                //Momentum
                 float m1 = (dpNorm1 * (mass - other.mass) + 2.0f * other.mass * dpNorm2) / (mass + other.mass);
                 float m2 = (dpNorm2 * (other.mass - mass) + 2.0f * mass * dpNorm1) / (mass + other.mass);
                 float fOverlap = 0.5f * (fDistance - radius - other.getRadius());
@@ -320,6 +373,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
                         other.dX = tx * dpTan2 + nx * m2;
                         other.dY = ty * dpTan2 + ny * m2;
+                        changeColor();
+                        other.changeColor();
                     }
                 }
             }
@@ -336,14 +391,26 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             {
                 id++;
             }
+
+            public void boneShadow(System.Windows.Point sp, System.Windows.Point ep, DrawingContext draw)
+            {
+                System.Windows.Media.Pen blackPen = new System.Windows.Media.Pen(System.Windows.Media.Brushes.Black, 9);
+                draw.DrawLine(blackPen, sp, ep);
+
+                draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, sp, 4, 4);
+                draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, ep, 4, 4);
+            }
+
             public void boneEnhance(System.Windows.Point sp, System.Windows.Point ep, DrawingContext draw, JointType startJoint, JointType endJoint)
             {
                 System.Windows.Media.Pen pen = new System.Windows.Media.Pen(System.Windows.Media.Brushes.WhiteSmoke, 12);
+                
                 Tuple<JointType, JointType> joint = new Tuple<JointType, JointType>(startJoint, endJoint);
                 int radius = 6;
                 draw.DrawLine(pen, sp, ep);
                 draw.DrawEllipse(System.Windows.Media.Brushes.WhiteSmoke, null, sp, radius, radius);
                 draw.DrawEllipse(System.Windows.Media.Brushes.WhiteSmoke, null, ep, radius, radius);
+                
                 for (int i = 0; i < balls.Length; i++)
                 {
                     float mass = 25.0f * 10.0f;
@@ -398,7 +465,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
                 }
             }
-            public void drawHead(System.Windows.Point point, DrawingContext draw)
+            public void drawHead(System.Windows.Point point, DrawingContext draw, double distanceRatio)
             {
                 //Draws Head and checks ball for collision
                 for (int i = 0; i < balls.Length; i++)
@@ -444,7 +511,10 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
                 }
                 Oldhead[id] = point;
+                double r = (distanceRatio);
                 draw.DrawEllipse(System.Windows.Media.Brushes.WhiteSmoke, null, point, 25, 25);
+                //draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, point, 23, 23);
+                
             }
         }
 
@@ -578,19 +648,36 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
                 for (int i = 0; i < balls.Length; i++)
                 {
-                    dc.DrawEllipse(System.Windows.Media.Brushes.Lime, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    if(balls[i].getColor() == 'g')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Lime, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    else if (balls[i].getColor() == 'r')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Red, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    else if (balls[i].getColor() == 'b')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Blue, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    else if (balls[i].getColor() == 'y')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Yellow, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    else if (balls[i].getColor() == 'p')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Purple, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    else if (balls[i].getColor() == 'o')
+                    {
+                        dc.DrawEllipse(System.Windows.Media.Brushes.Orange, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                    }
+                    //dc.DrawEllipse(System.Windows.Media.Brushes.Black, null, balls[i].getPosition(), balls[i].getRadius()-2, balls[i].getRadius()-2);
                     balls[i].update();
                 }
 
                 for (int i = 0; i < balls.Length; i++)
                 {
-
-                    /*if (balls[i].getPosition().X > RenderWidth || balls[i].getPosition().X < 0 || balls[i].getPosition().Y > RenderHeight || balls[i].getPosition().Y < 0)
-                    {
-                        balls[i].position.X = ran.Next((int)RenderWidth);
-                        balls[i].position.Y = ran.Next((int)RenderHeight);
-                    }*/
-
                     for (int j = 0; j < balls.Length; j++)
                     {
                         if (i != j)
@@ -650,8 +737,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
             
             // Render Torso
-            //this.DrawBone(skeleton, drawingContext, JointType.Head, JointType.ShoulderCenter);
-            //SkeletonPointToScreen(skeleton.Joints[JointType.Head])
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.Head].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), drawingContext, JointType.Head, JointType.ShoulderCenter);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderLeft].Position), drawingContext, JointType.ShoulderCenter, JointType.ShoulderLeft);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderRight].Position), drawingContext, JointType.ShoulderCenter, JointType.ShoulderRight);
@@ -661,52 +746,80 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HipRight].Position), drawingContext, JointType.HipCenter, JointType.HipRight);
 
 
-            /*this.DrawBone(skeleton, drawingContext, JointType.ShoulderCenter, JointType.ShoulderLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.ShoulderCenter, JointType.ShoulderRight);
-            this.DrawBone(skeleton, drawingContext, JointType.ShoulderCenter, JointType.Spine);
-            this.DrawBone(skeleton, drawingContext, JointType.Spine, JointType.HipCenter);
-            this.DrawBone(skeleton, drawingContext, JointType.HipCenter, JointType.HipLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.HipCenter, JointType.HipRight);*/
-
             // Left Arm
-            /*this.DrawBone(skeleton, drawingContext, JointType.ShoulderLeft, JointType.ElbowLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.ElbowLeft, JointType.WristLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.WristLeft, JointType.HandLeft);*/
-
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ElbowLeft].Position), drawingContext, JointType.ShoulderLeft, JointType.ElbowLeft);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ElbowLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.WristLeft].Position), drawingContext, JointType.ElbowLeft, JointType.WristLeft);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.WristLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HandLeft].Position), drawingContext, JointType.WristLeft, JointType.HandLeft);
 
             // Right Arm
-            /*this.DrawBone(skeleton, drawingContext, JointType.ShoulderRight, JointType.ElbowRight);
-            this.DrawBone(skeleton, drawingContext, JointType.ElbowRight, JointType.WristRight);
-            this.DrawBone(skeleton, drawingContext, JointType.WristRight, JointType.HandRight);*/
-
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ElbowRight].Position), drawingContext, JointType.ShoulderRight, JointType.ElbowRight);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.ElbowRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.WristRight].Position), drawingContext, JointType.ElbowRight, JointType.WristRight);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.WristRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HandRight].Position), drawingContext, JointType.WristRight, JointType.HandRight);
 
 
             // Left Leg
-
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.HipLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.KneeLeft].Position), drawingContext, JointType.HipLeft, JointType.KneeLeft);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.KneeLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.AnkleLeft].Position), drawingContext, JointType.KneeLeft, JointType.AnkleLeft);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.AnkleLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.FootLeft].Position), drawingContext, JointType.AnkleLeft, JointType.FootLeft);
 
-            /*this.DrawBone(skeleton, drawingContext, JointType.HipLeft, JointType.KneeLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.KneeLeft, JointType.AnkleLeft);
-            this.DrawBone(skeleton, drawingContext, JointType.AnkleLeft, JointType.FootLeft);*/
-
             // Right Leg
-            /*this.DrawBone(skeleton, drawingContext, JointType.HipRight, JointType.KneeRight);
-            this.DrawBone(skeleton, drawingContext, JointType.KneeRight, JointType.AnkleRight);
-            this.DrawBone(skeleton, drawingContext, JointType.AnkleRight, JointType.FootRight);*/
-
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.HipRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.KneeRight].Position), drawingContext, JointType.HipRight, JointType.KneeRight);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.KneeRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.AnkleRight].Position), drawingContext, JointType.KneeRight, JointType.AnkleRight);
             spooks.boneEnhance(SkeletonPointToScreen(skeleton.Joints[JointType.AnkleRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.FootRight].Position), drawingContext, JointType.AnkleRight, JointType.FootRight);
 
-            spooks.drawHead(this.SkeletonPointToScreen(skeleton.Joints[JointType.Head].Position), drawingContext);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*// Render Torso
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.Head].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderRight].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HipLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HipRight].Position), drawingContext);
+
+
+            // Left Arm
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ElbowLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ElbowLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.WristLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.WristLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HandLeft].Position), drawingContext);
+
+            // Right Arm
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ShoulderRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.ElbowRight].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.ElbowRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.WristRight].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.WristRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.HandRight].Position), drawingContext);
+
+
+            // Left Leg
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.HipLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.KneeLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.KneeLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.AnkleLeft].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.AnkleLeft].Position), SkeletonPointToScreen(skeleton.Joints[JointType.FootLeft].Position), drawingContext);
+
+            // Right Leg
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.HipRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.KneeRight].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.KneeRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.AnkleRight].Position), drawingContext);
+            spooks.boneShadow(SkeletonPointToScreen(skeleton.Joints[JointType.AnkleRight].Position), SkeletonPointToScreen(skeleton.Joints[JointType.FootRight].Position), drawingContext);
+            */
+            double distance = Math.Sqrt(((SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position).X - SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position).X) * (SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position).X - SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position).X)) + ((SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position).Y - SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position).Y) * (SkeletonPointToScreen(skeleton.Joints[JointType.Spine].Position).Y - SkeletonPointToScreen(skeleton.Joints[JointType.HipCenter].Position).Y)));
+            spooks.drawHead(this.SkeletonPointToScreen(skeleton.Joints[JointType.Head].Position), drawingContext, distance);
 
 
         }
