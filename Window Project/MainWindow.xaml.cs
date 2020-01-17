@@ -184,6 +184,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 id = i;
                 mass = radius * 10.0f;
                 colorChar = 'g';
+                this.changeColor();
             }
             public float getMass()
             {
@@ -229,8 +230,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 else
                 {
                     //Friction
-                    ax = -dX * 0.01f;
-                    ay = -dY * 0.01f;
+                    ax = -dX * 0.1f;
+                    ay = -dY * 0.1f;
                     dX += ax;
                     dY += ay + 0.98f;
                     position.X += dX;
@@ -328,8 +329,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
                     else if (position.Y > RenderHeight - radius)
                     {
-                        position.Y = RenderHeight - radius;
-                        dY *= -1;
+                        position.Y = 0 - radius;
+                        //position.Y = RenderHeight - radius;
+                        //dY *= -1;
                     }
                 }
             }
@@ -373,13 +375,13 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
                         other.dX = tx * dpTan2 + nx * m2;
                         other.dY = ty * dpTan2 + ny * m2;
-                        changeColor();
-                        other.changeColor();
+
+                        //changeColor();
+                        //other.changeColor();
                     }
                 }
             }
         }
-
         public class MrSpooks
         {
             private int id;
@@ -514,7 +516,6 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 double r = (distanceRatio);
                 draw.DrawEllipse(System.Windows.Media.Brushes.WhiteSmoke, null, point, 25, 25);
                 //draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, point, 23, 23);
-                
             }
         }
 
