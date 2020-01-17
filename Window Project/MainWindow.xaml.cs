@@ -659,7 +659,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
                     else if (balls[i].getColor() == 'b')
                     {
-                        dc.DrawEllipse(System.Windows.Media.Brushes.Blue, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                        dc.DrawEllipse(System.Windows.Media.Brushes.DeepSkyBlue, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
                     }
                     else if (balls[i].getColor() == 'y')
                     {
@@ -667,7 +667,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     }
                     else if (balls[i].getColor() == 'p')
                     {
-                        dc.DrawEllipse(System.Windows.Media.Brushes.Purple, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
+                        dc.DrawEllipse(System.Windows.Media.Brushes.MediumVioletRed, null, balls[i].getPosition(), balls[i].getRadius(), balls[i].getRadius());
                     }
                     else if (balls[i].getColor() == 'o')
                     {
