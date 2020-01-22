@@ -154,7 +154,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
 
         public class Balls
         {
-            private double randX = (ran.NextDouble() * 0.2f) - 0.1;
+            private double randX = -((ran.NextDouble() * 2f) - 1f);
             private double randY = (ran.NextDouble() * 0.2f) - 0.1;
             private bool timeSwitch = true;
             //position of ball
@@ -193,8 +193,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             public void update()
             {
                 //Switches between gravity and no gravity
-                if(DateTime.Now.Minute%2 == 0)
-                {
+                /*if(DateTime.Now.Minute%2 == 0)
+                //{
                     ax = -dX * 0.01f;
                     ay = -dY * 0.01f;
                     dX += ax + (float)randX;
@@ -226,13 +226,13 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                         dY = 0;
                     }
                     checkBoundaryCollision();
-                }
+                //}
                 else
-                {
+                {*/
                     //Friction
                     ax = -dX * 0.1f;
                     ay = -dY * 0.1f;
-                    dX += ax;
+                    dX += ax + (float)randX;
                     dY += ay + 0.98f;
                     position.X += dX;
                     position.Y += dY;
@@ -242,7 +242,7 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                         dY = 0;
                     }
                     checkBoundaryCollision();
-                }
+                //}
                 
             }
             public char getColor()
@@ -298,8 +298,8 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
             }
             public void checkBoundaryCollision()
             {
-                if(DateTime.Now.Minute%2 == 0)
-                {
+                /*if(DateTime.Now.Minute%2 == 0)
+                //{
                     if (position.X > RenderWidth + radius)
                     {
                         position.X = 0 - radius;
@@ -316,9 +316,9 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     {
                         position.Y = RenderHeight + radius;
                     }
-                }
-                else
-                {
+                //}
+                /*else
+                {*/
                     if (position.X > RenderWidth + radius)
                     {
                         position.X = 0 - radius;
@@ -327,13 +327,13 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                     {
                         position.X = RenderWidth + radius;
                     }
-                    else if (position.Y > RenderHeight - radius)
+                    else if (position.Y > RenderHeight + radius)
                     {
                         position.Y = 0 - radius;
                         //position.Y = RenderHeight - radius;
                         //dY *= -1;
                     }
-                }
+                //}
             }
             public void checkBallCollision(Balls other)
             {
@@ -394,14 +394,14 @@ namespace Microsoft.Samples.Kinect.SkeletonBasics
                 id++;
             }
 
-            public void boneShadow(System.Windows.Point sp, System.Windows.Point ep, DrawingContext draw)
+            /*public void boneShadow(System.Windows.Point sp, System.Windows.Point ep, DrawingContext draw)
             {
                 System.Windows.Media.Pen blackPen = new System.Windows.Media.Pen(System.Windows.Media.Brushes.Black, 9);
                 draw.DrawLine(blackPen, sp, ep);
 
                 draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, sp, 4, 4);
                 draw.DrawEllipse(System.Windows.Media.Brushes.Black, null, ep, 4, 4);
-            }
+            }*/
 
             public void boneEnhance(System.Windows.Point sp, System.Windows.Point ep, DrawingContext draw, JointType startJoint, JointType endJoint)
             {
